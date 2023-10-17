@@ -5,13 +5,17 @@ import { Search } from 'lucide-react'
 
 export function NavBarr () {
   const { setStore, commandMenu } = useOptions()
+  const openSearch = () => setStore('commandMenu', !commandMenu)
 
   return (
-    <nav className='fixed w-full flex justify-center border-b border-neutral-700 p-2'>
-      <Button className='flex gap-10' variant='outline' onClick={() => setStore('commandMenu', !commandMenu)}>
-        Search Barr
-        <Search />
-      </Button>
-    </nav>
+    <div className='w-full'>
+      <nav className='w-full flex justify-center p-2'>
+        <Button className='flex gap-14' variant='outline' onClick={openSearch}>
+          Search Barr
+          <Search />
+        </Button>
+      </nav>
+      <div className='border' />
+    </div>
   )
 }

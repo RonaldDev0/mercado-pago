@@ -11,19 +11,15 @@ export function CommandMenu () {
   const { commandMenu, setStore } = useOptions()
   const inputRef = useRef<any>('')
 
-  const setCommand = (open: boolean) => {
-    setStore('commandMenu', open)
-  }
+  const setCommand = (open: boolean) => setStore('commandMenu', open)
 
   function submit (page: string) {
     router.push(page)
     setStore('commandMenu', !commandMenu)
   }
 
-  function handleKeyDown (e: any) {
-    if (e.key === 'Enter') {
-      submit(`/search?q=${inputRef.current.value}`)
-    }
+  function handleEnter (e: any) {
+    e.key === 'Enter' && submit(`/search?q=${inputRef.current.value}`)
   }
 
   useEffect(() => {
@@ -40,12 +36,11 @@ export function CommandMenu () {
 
   return (
     <CommandDialog open={commandMenu} onOpenChange={setCommand}>
-      <CommandInput ref={inputRef} onKeyDown={handleKeyDown} placeholder='Type a command or search...' />
+      <CommandInput ref={inputRef} onKeyDown={handleEnter} placeholder='Type a command or search...' />
       <CommandList>
         <CommandEmpty>Press enter to search</CommandEmpty>
         <CommandGroup heading='Suggestions'>
-          <CommandItem onSelect={() => submit('/')}>
-            <Home className='mr-2 h-4 w-4' />
+          <CommandItem onSelect={() => submit('/')}><Home className='mr-2 h-4 w-4' />
             <span>Home</span>
           </CommandItem>
           <CommandItem onSelect={() => submit('/subscriptions')}>

@@ -8,30 +8,39 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/standard/eslintrc.json",
+      "next/core-web-vitals"
+    ]
+  },
   "dependencies": {
+    "@mercadopago/sdk-react": "^0.0.15",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
+    "encoding": "^0.1.13",
     "lucide-react": "^0.284.0",
+    "mercadopago": "^2.0.1",
     "next": "13.5.4",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",
     "zustand": "^4.4.3"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10",
-    "eslint": "^8",
+    "@types/node": "^20.8.6",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.51.0",
     "eslint-config-next": "13.5.4",
-    "postcss": "^8",
+    "postcss": "^8.4.31",
     "standard": "^17.1.0",
-    "tailwindcss": "^3",
-    "typescript": "^5"
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2"
   }
 }
