@@ -1,6 +1,6 @@
 export default function Likes () {
   return (
-    <main className='h-screen w-full grid place-content-center'>
+    <main className='w-full flex justify-center mt-10'>
       <h1>Like's list</h1>
     </main>
   )

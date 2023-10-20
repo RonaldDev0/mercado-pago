@@ -8,7 +8,7 @@ export function NavBarr () {
   const openSearch = () => setStore('commandMenu', !commandMenu)
 
   return (
-    <div className='w-full'>
+    <div className='w-full relative'>
       <nav className='w-full flex justify-center p-2'>
         <Button className='flex gap-14' variant='outline' onClick={openSearch}>
           Search Barr

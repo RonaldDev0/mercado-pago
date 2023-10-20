@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 
 type State = {
+  amount: number
   commandMenu: boolean
 }
 
@@ -9,6 +10,7 @@ type Actions = {
 }
 
 export const useOptions = create<State & Actions>(set => ({
+  amount: 5000,
   commandMenu: false,
   setStore: (property, value) => set(prevState => ({ ...prevState, [property]: value }))
 }))

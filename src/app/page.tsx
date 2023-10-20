@@ -1,7 +1,12 @@
+'use client'
+import { useSearchParams } from 'next/navigation'
+import { VideoPlayer } from '@/components'
+
 export default function Home () {
+  const query: any = useSearchParams().get('q')
   return (
-    <main className='h-screen w-full grid place-content-center'>
-      <h1>Home</h1>
+    <main className='w-full flex justify-center mt-10'>
+      {query && <VideoPlayer width='1200' src={query} />}
     </main>
   )
 }

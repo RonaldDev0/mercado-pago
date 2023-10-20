@@ -1,6 +1,6 @@
 export default function Subscriptions () {
   return (
-    <main className='h-screen w-full grid place-content-center'>
+    <main className='w-full flex justify-center mt-10'>
       <h1>Subscriptions</h1>
     </main>
   )
